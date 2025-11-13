@@ -1,15 +1,24 @@
-numero = int(input("ingrese un número entre 0 y 15:"))
+numero = int(input("ingrese un número entre 0 y 15: "))
 
 resultados = []
 temporal = numero
 
-while temporal > 0 and temporal <= 15:
-    mod = temporal % 2
-    resultados.append(mod)
-    temporal //= 2
+while (True):
+    if temporal > 0 and temporal <= 15:
+        mod = temporal % 2
+        resultados.append(mod)
+        temporal //= 2
+    elif temporal == 0:
+        resultados.append(0)
+        break;
+    else:
+        print("número inválido")
+        break;
 
-if numero == 0:
-    resultados.append(0)
+num_invertido = ""
 
-resultados.reverse()
-print(resultados)
+for i in range(0, len(resultados)):
+    cont = -i-1
+    num_invertido += str(resultados[cont])
+
+print("número en binario:", num_invertido)
